@@ -8,5 +8,6 @@ module "instance-1" {
 }
 
 output "dns" {
-  value = module.instance-1.elb-dns
+  value       = module.instance-1.elb-dns
+  description = "DNS instance-1 elb"
 }
