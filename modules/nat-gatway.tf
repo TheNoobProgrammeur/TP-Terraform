@@ -15,7 +15,7 @@ resource "aws_nat_gateway" "nat-gatway" {
 
 
 resource "aws_route_table" "route-table-private" {
-  vpc_id = aws_vpc.landing-zone.id
+  vpc_id = aws_vpc.main-zone.id
 
   tags = {
     "Name"  = "route-table-private-${var.owner}"

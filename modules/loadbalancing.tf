@@ -29,7 +29,7 @@ resource "aws_elb" "lb" {
 
 
   tags = {
-    "Name"  = "antoine-lb"
+    "Name"  = "${var.owner}-lb"
     "Owner" = var.owner
   }
 }

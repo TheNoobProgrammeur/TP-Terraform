@@ -1,5 +1,5 @@
 resource "aws_internet_gateway" "internet-gateway" {
-  vpc_id = aws_vpc.landing-zone.id
+  vpc_id = aws_vpc.main-zone.id
 
   tags = {
     "Name"  = "internet-gateway-${var.owner}"
@@ -8,7 +8,7 @@ resource "aws_internet_gateway" "internet-gateway" {
 }
 
 resource "aws_route_table" "route-table-public" {
-  vpc_id = aws_vpc.landing-zone.id
+  vpc_id = aws_vpc.main-zone.id
 
   tags = {
     "Name"  = "route-table-public-${var.owner}"

@@ -1,7 +1,7 @@
 resource "aws_security_group" "int-lb-sg" {
   name        = "int-lb-sg"
   description = "Security groupe du lb"
-  vpc_id      = aws_vpc.landing-zone.id
+  vpc_id      = aws_vpc.main-zone.id
   tags = {
     "Name"  = "int-lb-sg"
     "Owner" = var.owner
@@ -11,7 +11,7 @@ resource "aws_security_group" "int-lb-sg" {
 resource "aws_security_group" "int-webserver-sg" {
   description = "Security groupe des instances"
   name        = "int-webserver-sg"
-  vpc_id      = aws_vpc.landing-zone.id
+  vpc_id      = aws_vpc.main-zone.id
   tags = {
     "Name"  = "int-webserver-sg"
     "Owner" = var.owner

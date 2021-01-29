@@ -1,6 +1,6 @@
 resource "aws_instance" "Instances-a" {
   count                  = var.nb-instance-by-subnet
-  ami                    = var.ami
+  ami                    = var.ami-ID.ami-id-subnet-a
   instance_type          = var.instance-type
   subnet_id              = aws_subnet.int-private-subnet-a.id
   key_name               = var.key-name
@@ -14,7 +14,7 @@ resource "aws_instance" "Instances-a" {
 
 resource "aws_instance" "Instances-b" {
   count                  = var.nb-instance-by-subnet
-  ami                    = var.ami
+  ami                    = var.ami-ID.ami-id-subnet-b
   instance_type          = var.instance-type
   subnet_id              = aws_subnet.int-private-subnet-b.id
   key_name               = var.key-name
